@@ -7,7 +7,7 @@ Deployed on Nelify
 # Back-end
 
 Deployed on Nelify
-[Github Repo of the server code] (https://github.com/inesChebil/Memories-app--server-side)
+[Github Repo of the server code] (https://github.com/inesChebil/Memories-server-side.git)
 
 ## Technologies : Express.js, Mongoose
 
