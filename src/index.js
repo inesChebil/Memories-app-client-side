@@ -1,17 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDom from "react-dom";
+// provider is going to keep track of that Store, and that allow us to access that store from anywhere inside of the app
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware, compose } from "redux";
+import thunk from "redux-thunk";
 
-ReactDOM.render(
-  <React.StrictMode>
+import { reducers } from "./reducers";
+
+import App from "./App";
+import "./index.css";
+// this is the place where we are going to initialize redux
+
+const store = createStore(reducers, compose(applyMiddleware(thunk)));
+
+ReactDom.render(
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </Provider>,
+  document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
